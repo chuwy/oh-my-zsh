@@ -29,13 +29,9 @@ if (( $+commands[$virtualenvwrapper] )); then
                         workon "$ENV_NAME" && export CD_VIRTUAL_ENV="$ENV_NAME"
                     fi
                 fi
-            elif [ $CD_VIRTUAL_ENV ]; then
-                # We've just left the repo, deactivate the environment
-                # Note: this only happens if the virtualenv was activated automatically
-                deactivate && unset CD_VIRTUAL_ENV
-            fi
             unset PROJECT_ROOT
             unset WORKON_CWD
+            fi
         fi
     }
 
